@@ -1,0 +1,18 @@
+﻿@model EmployeeManagement.Models.PaymentRule
+
+<h2>Create Payment Rule</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.RuleName)
+        @Html.TextBoxFor(model => model.RuleName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.RuleName, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

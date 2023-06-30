@@ -1,0 +1,22 @@
+﻿@model Employee
+
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post, new { @class = "form" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DesignationId, new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.DesignationId, ViewBag.Designations as SelectList, "Select Designation", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.WorkingHourId, new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.WorkingHourId, ViewBag.WorkingHours as SelectList, "Select Working Hour", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PaymentRuleId, new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.PaymentRuleId, ViewBag.PaymentRules as SelectList, "Select Payment Rule", new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Create Employee</button>
+}   

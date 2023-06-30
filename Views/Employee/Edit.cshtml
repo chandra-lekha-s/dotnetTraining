@@ -1,0 +1,22 @@
+﻿@model Employee
+
+@using (Html.BeginForm("Edit", "Employee", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @Value = Model?.Name })
+    </div>
+    <div>
+        @Html.LabelFor(model => model.DesignationId)
+        @Html.DropDownListFor(model => model.DesignationId, ViewBag.Designations as SelectList, "Select Designation")
+    </div>
+    <div>
+        @Html.LabelFor(model => model.WorkingHourId)
+        @Html.DropDownListFor(model => model.WorkingHourId, ViewBag.WorkingHours as SelectList, "Select Working Hour")
+    </div>
+    <div>
+        @Html.LabelFor(model => model.PaymentRuleId)
+        @Html.DropDownListFor(model => model.PaymentRuleId, ViewBag.PaymentRules as SelectList, "Select Payment Rule")
+    </div>
+    <button type="submit">Update Employee</button>
+}
